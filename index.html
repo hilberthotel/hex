@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Hex</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="currentPlayer">
+        Your move
+    </div>
+    <div class="container">
+        <!--<div class="currentPlayer">
+            Current player <span class="playerColor"></span>
+        </div> -->
+        <canvas id="HexCanvas" width="650" height="420"></canvas>
+        <div id="scoreTableContainer">
+            <div id="totalColors" class="totalColors">
+            </div>
+            <div id="scores" class="scoreTable">
+            </div>
+        </div>
+        <div class="controls">
+            <label for="numPlayers">Players</label>
+            <input id="numPlayers" type="number" name="numPlayers" value="4">
+            <label for="numMoves">Moves per player</label>
+            <input id="numMoves" type="number" name="numMoves" value="1">
+
+            <label for="centralField">Central field</label>
+            <input id="centralField" type="checkbox" name="centralField" checked value="">
+
+            <label for="randomLast">Rand. last move (pattern)</label>
+            <input id="randomLast" type="checkbox" name="randomLast" class="chb" value="">
+
+            <label for="randomLastNeighbours">Rand. last move (neigh)</label>
+            <input id="randomLastNeighbours" type="checkbox" name="randomLastNeighbours" class="chb" value="">
+
+            <label for="minColors">Min. colors</label>
+            <input id="minColors" type="number" name="minColors" value="1">
+
+            <label for="maxColors">Max. colors</label>
+            <input id="maxColors" type="number" name="maxColors" value="6">
+
+            <label for="gridSize">Grid size (rows x cols)</label>
+            <input id="rows" type="number" name="maxColors" value="10"> X
+            <input id="cols" type="number" name="maxColors" value="20">
+            <button id="new" type="button" name="button">Singleplayer</button>
+            <button id="multiplayer" type="button" name="button">Multiplayer</button>
+            <button style="display: none" id="multiplayerStart" type="button" name="button">Start</button>
+            <span style="display: none" id="connectedText">Connected: <span id="connected">0</span></span>
+        </div>
+    </div>
+    <canvas class="chart" id="rule1" width="200" height="200"></canvas>
+    <canvas class="chart" id="rule2" width="200" height="200"></canvas>
+    <canvas class="chart" id="rule3" width="200" height="200"></canvas>
+    <p>
+        <canvas class="chart" id="currentWinner" width="200" height="200"></canvas>
+        <canvas class="chart" id="totalColors" width="200" height="200"></canvas>
+        <script src="scripts/masterFunc.js"></script>
+        <script src="scripts/slaveFunc.js"></script>
+        <script src="scripts/multiplayer.js"></script>
+        <script src="scripts/hexagon.js"></script>
+        <script src="scripts/player.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/charts.js"></script>
+</body>
